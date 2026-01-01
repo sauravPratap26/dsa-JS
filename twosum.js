@@ -20,5 +20,5 @@ const twoSumBrute = (nums, target) => {
   }
   return [];
 };
-console.log(twoSum([2, 7, 0, 11, 15], 15));
-console.log(twoSumBrute([2, 7, 0, 11, 15], 15));
+// console.log(twoSum([2, 7, 0, 11, 15], 15));
+// console.log(twoSumBrute([2, 7, 0, 11, 15], 15));
