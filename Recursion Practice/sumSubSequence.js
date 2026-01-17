@@ -32,6 +32,20 @@ const printOneSumSub = (arr, sum, start = 0, temp = [], tempSum = 0) => {
   }
 };
 
+const countSumSub = (arr, sum, start = 0, tempSum = 0) => {
+  if (arr.length == start) {
+    if (tempSum == sum) {
+      return 1;
+    }
+    return 0;
+  }
+  tempSum += arr[start];
+  let withoutSkip = countSumSub(arr, sum, start + 1, tempSum);
+  tempSum -= arr[start];
+  let withSkip = countSumSub(arr, sum, start + 1, tempSum);
+  return withSkip + withoutSkip;
+};
 printSumSub([1, 2, 3, 4, 5], 5);
-printOneSumSub([1, 2, 3, 4, 5], 5);
-
+// printOneSumSub([1, 2, 3, 4, 5], 5);
+let count = countSumSub([1, 2, 3, 4, 5], 5);
+console.log(count);
